@@ -1,5 +1,7 @@
 package functions
 
+import kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors.LazyJavaClassMemberScope
+
 
 //function is a block of code that executes a  specific task e,g println()
 //fun name of function(parameter){
@@ -48,6 +50,49 @@ fun git(num:Int){
     }
 
 }
+
+//functions that returns a value
+//A function that return  a value has to specify the return
+//type(Int , String , Double, Boolean)
+//A function can return a use full value or non use full value
+//use full values are like Int, String , Double etc
+// None use full values can be a bare string ie "hello world"
+fun get_age():Int{
+//    to return a value use the "return statement"
+    return 23
+}
+fun sum_of_two(num1:Int, num2:Int):Int{
+//    Int:return type
+    val sum:Int = num1 + num2
+    return sum
+}
+fun get_name(username:String) :String{
+    return username
+}
+//returning non use full data: use Unit tyoe
+fun sayHello():Unit{
+    println("Hello World")
+}
+fun sayHello2(username:String):Unit{
+    println("Hello world my name is $username")
+}
+fun sayHello3(username:String, age: Int):Unit{
+    val sentence = "My name is $username and I am $age years old"
+    println(sentence)
+}
+
+//functions wih default arguments
+//DEfault arguements
+fun getDetails(username: String, age:Int , province: String ="Wuhan"){
+    println("Name :$username")
+    println("Age :$age")
+    println("Province :$province")//default args
+}
+
+
+
+
+
 fun main(args: Array<String>) {
 //   to call a function use greetings
 //    MUST be in the main function
@@ -57,5 +102,20 @@ fun main(args: Array<String>) {
     greetings3("James", 18)
 //    area(7)
 
+    get_age() //returns int 23 to variable my_age
+     val My_age:Int = get_age()
+    println(My_age)
+    val results:Int = sum_of_two(2 , 3)
+    println(results)
+    val name:String = get_name("Michael")
+    println(name)
+    sayHello()
+    sayHello2("Maya Bijou")
+    sayHello3("James", 56)
+
+    getDetails("Kira Kosarin", 23)
+    getDetails("Kira Kosarin", 23,"Shanghai")
+//    Named arguments
+    getDetails(province = "Shanghai", username = "James May", age = 23)
 
 }
