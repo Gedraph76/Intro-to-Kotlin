@@ -1,6 +1,6 @@
 package OOP
 
-//classes taht are passed in data just: like functions
+//classes that are passed in data just: like functions
 //() constructors
 class BenzS200(owner:String, number_plate:Int, val color:String){
     var mwenye_gari:String //empty to store incoming data
@@ -18,7 +18,7 @@ class BenzS200(owner:String, number_plate:Int, val color:String){
 }
 
 //assignment
-class Calculator(var num1:Int , var num2:Int){
+class Calculator(var num1:Int , var num2:Int ){
     fun sum_of_two(){
         var sum:Int = num1 + num2
         println("The sum of $num1 and $num2 is $sum")
@@ -37,15 +37,24 @@ class Calculator(var num1:Int , var num2:Int){
     }
 
 }
+class Volume( var rad:Int, var height:Int){
+    fun volume(){
+        val pie= 22/7
+        var vol:Int = rad * rad * pie *height
+        println("The volume of cylinder with height of $height and Radius of $rad is $vol")
+    }
+}
 
 
 fun main(args: Array<String>) {
   val b1 = BenzS200("john",123 , "Blue")
     b1.printDetails()
-  var b2 = Calculator(12 ,3)
+  val b2 = Calculator(12 ,3)
     b2.sum_of_two()
     b2.minus()
     b2.multiplication()
     b2.division()
+  val b3 = Volume(12, 7)
+    b3.volume()
 }
 
